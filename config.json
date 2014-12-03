@@ -1,0 +1,26 @@
+[
+  {
+    "index" :     0,
+    "jsFiddleUrl" : "3mwpboym",
+    "description" : "useing arguments.callee",
+    "title" : "arguments.callee"
+  },
+  {
+    "index" :     1,
+    "jsFiddleUrl" : "7r17qxey",
+    "description" : "extend native arrays to add more method",
+    "title" : "extending native arrays"
+  },
+  {
+    "index" :     2,
+    "jsFiddleUrl" : "kxw7d/3",
+    "description" : "object in javascript is a key value pair",
+    "title" : "object in javascript"
+  },
+  {
+    "index" :     3,
+    "jsFiddleUrl" : "DRQTT",
+    "description" : "Javascript array methods",
+    "title" : "Javascript array methods"
+  }
+]
