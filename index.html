@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/html" id="iframeTemplate">
+        <div id="<%= obj.jsFiddleUrl %>">
+            <h3><%= obj.description %></h3>
+            <iframe width="100%" height="300" src="http://jsfiddle.net/deepaksisodiya/<%= obj.jsFiddleUrl %>/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        </div>
+    </script>
+
+    <script type="text/html" id="navBar">
+        <% _.each(obj,function (elem) { %>
+        <ul>
+            <li>
+                <a onclick=loadConfig("<%= elem.index %>")  href="#<%=elem.jsFiddleUrl %>"><%=elem.title %></a>
+            </li>
+        </ul>
+        <% }); %>
+    </script>
+
+</head>
+<body>
+
+<section style="float: right;width: 80%;">
+</section>
+
+
+<nav style="float: left; width: 20%;">
+</nav>
+
+<script src="fiddleNavigator.js"></script>
+</body>
+</html>
