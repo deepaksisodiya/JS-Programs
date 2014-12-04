@@ -3,19 +3,20 @@
  */
 
 App.bodyComponent = (function () {
-    var bodyComponent = function () {
-
+    var bodyComponent = function (id) {
+        this.$el = $("#" + id);
     };
     bodyComponent.prototype = {
         constructor: bodyComponent,
+        templateId : "iframeTemplate",
         init : function () {
             var self = this;
             $.subscribe("navClick", function(e, data){
-                self.loadProgram(data);
+                self.render(data);
             });
         },
-        loadProgram : function(data) {
-            App.common(data, "iframeTemplate", "section");
+        render: function(data) {
+            App.loadTemplate(data, this.templateId, this.$el);
         }
     };
     return bodyComponent;

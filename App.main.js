@@ -3,10 +3,13 @@
  */
 
 App.main = function() {
-    var v = new App.navComponent();
+    var v = new App.navComponent("nav1");
     v.init();
 
-    var b = new App.bodyComponent();
+    var u = new App.navComponent("nav2");
+    u.init();
+
+    var b = new App.bodyComponent("section1");
     b.init();
 };
 

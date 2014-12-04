@@ -12,11 +12,11 @@ App.getRequest = function (file, callback) {
         callback(JSON.parse(this.responseText));
     };
 };
-App.common = function (dataObj, tempId, tagId) {
+App.loadTemplate = function (dataObj, tempId, domNode) {
     var tempStr = $("#" + tempId).html();
     var compileTemp = _.template(tempStr);
     var tempHTML = compileTemp({
         obj:dataObj
     });
-    $(tagId).html(tempHTML);
+    domNode.html(tempHTML);
 };
