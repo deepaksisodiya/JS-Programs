@@ -1,26 +1,38 @@
 [
   {
-    "index" :     0,
+    "site"  :    "jsfiddle",
     "jsFiddleUrl" : "3mwpboym",
     "description" : "useing arguments.callee",
     "title" : "arguments.callee"
   },
   {
-    "index" :     1,
+    "site"  :    "jsfiddle",
     "jsFiddleUrl" : "7r17qxey",
     "description" : "extend native arrays to add more method",
     "title" : "extending native arrays"
   },
   {
-    "index" :     2,
     "jsFiddleUrl" : "kxw7d/3",
+    "site"  :    "jsfiddle",
     "description" : "object in javascript is a key value pair",
     "title" : "object in javascript"
   },
   {
-    "index" :     3,
     "jsFiddleUrl" : "DRQTT",
+    "site"  :    "jsfiddle",
     "description" : "Javascript array methods",
     "title" : "Javascript array methods"
+  },
+  {
+    "jsFiddleUrl" : "9wtk1t7r",
+    "site"  :    "jsfiddle",
+    "description" : "Javascript typeof",
+    "title" : "Javascript typeof"
+  },
+  {
+    "jsFiddleUrl" : "jibatu/4",
+    "site"  :    "jsbin",
+    "description" : "template using underscore template",
+    "title" : "underscore.js template"
   }
 ]
