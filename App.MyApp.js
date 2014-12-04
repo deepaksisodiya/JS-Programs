@@ -5,8 +5,8 @@
 
 
 App.MyApp = (function () {
-    var MyApp = function (id) {
-        this.$el = $("#" + id);
+    var MyApp = function ($el) {
+        this.$el = $el;
         this.init();
     };
     MyApp.prototype = {
@@ -14,8 +14,8 @@ App.MyApp = (function () {
         templateId : "myAppTemplate",
         init : function () {
             this.render();
-            new App.navComponent("nav1");
-            new App.bodyComponent("section1");
+            new App.navComponent(this.$el.find("#nav1"));
+            new App.bodyComponent(this.$el.find("#section1"));
         },
         render: function() {
             App.loadTemplate({}, this.templateId, this.$el);

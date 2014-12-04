@@ -4,8 +4,8 @@
 
 
 App.navComponent = (function () {
-    var navComponent = function (id) {
-        this.$el = $("#" + id);
+    var navComponent = function ($el) {
+        this.$el = $el;
         this.init();
     };
     navComponent.prototype = {

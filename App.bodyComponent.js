@@ -3,8 +3,8 @@
  */
 
 App.bodyComponent = (function () {
-    var bodyComponent = function (id) {
-        this.$el = $("#" + id);
+    var bodyComponent = function ($el) {
+        this.$el = $el;
         this.init();
     };
     bodyComponent.prototype = {
