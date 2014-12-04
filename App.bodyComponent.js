@@ -21,5 +21,7 @@ App.bodyComponent = (function () {
     return bodyComponent;
 })();
 
-var v = App.bodyComponent;
-v.prototype.init();
+
+// App.main inirialize both component
+// remove App.common and put inside each js
+// 2 nav bar

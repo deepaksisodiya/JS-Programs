@@ -21,6 +21,3 @@ App.navComponent = (function () {
     };
     return navComponent;
 })();
-
-var v = App.navComponent;
-v.prototype.init();
