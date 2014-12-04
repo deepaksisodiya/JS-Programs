@@ -12,10 +12,11 @@ App.navComponent = (function () {
         init : function () {
             App.getRequest("config.json", function (dataConfig) {
                 App.common(dataConfig, "navBar", "nav");
-                $(".link").click(function () {
+                $(".link").on("click", function () {
                     var index = this.getAttribute("data-index");
                     $.publish("navClick", dataConfig[index]);
                 });
+                $(".link:first").trigger("click");
             });
         }
     };

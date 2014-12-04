@@ -83,6 +83,6 @@
 
   // Custom Globals
   "globals"       : {
-    "define": true
+    "App": true
   }        // additional predefined global variables
 }
