@@ -10,18 +10,13 @@ App.bodyComponent = (function () {
         constructor: bodyComponent,
         init : function () {
             var self = this;
-            App.getRequest("config.json", function (dataConfig) {
-                self.loadProgram(0);
+            $.subscribe("navClick", function(e, data){
+                self.loadProgram(data);
             });
         },
-        loadProgram : function(index) {
-            App.common(App.data[index], "iframeTemplate", "section");
+        loadProgram : function(data) {
+            App.common(data, "iframeTemplate", "section");
         }
     };
     return bodyComponent;
 })();
-
-
-// App.main inirialize both component
-// remove App.common and put inside each js
-// 2 nav bar

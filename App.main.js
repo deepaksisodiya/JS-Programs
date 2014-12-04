@@ -8,6 +8,6 @@ App.main = function() {
 
     var b = new App.bodyComponent();
     b.init();
-}
+};
 
 App.main();

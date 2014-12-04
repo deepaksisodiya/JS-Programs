@@ -14,7 +14,7 @@ App.navComponent = (function () {
                 App.common(dataConfig, "navBar", "nav");
                 $(".link").click(function () {
                     var index = this.getAttribute("data-index");
-                    App.bodyComponent.prototype.loadProgram(index);
+                    $.publish("navClick", dataConfig[index]);
                 });
             });
         }

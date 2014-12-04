@@ -9,8 +9,7 @@ App.getRequest = function (file, callback) {
     oReq.open("get", file, true);
     oReq.send();
     oReq.onload = function () {
-        App.data = JSON.parse(this.responseText);
-        callback(App.data);
+        callback(JSON.parse(this.responseText));
     };
 };
 App.common = function (dataObj, tempId, tagId) {
