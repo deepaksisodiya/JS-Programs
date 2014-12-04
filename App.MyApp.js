@@ -14,6 +14,8 @@ App.MyApp = (function () {
         templateId : "myAppTemplate",
         init : function () {
             this.render();
+            new App.navComponent("nav1");
+            new App.bodyComponent("section1");
         },
         render: function() {
             App.loadTemplate({}, this.templateId, this.$el);
