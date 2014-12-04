@@ -5,6 +5,7 @@
 App.bodyComponent = (function () {
     var bodyComponent = function (id) {
         this.$el = $("#" + id);
+        this.init();
     };
     bodyComponent.prototype = {
         constructor: bodyComponent,

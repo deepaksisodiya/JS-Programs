@@ -6,6 +6,7 @@
 App.navComponent = (function () {
     var navComponent = function (id) {
         this.$el = $("#" + id);
+        this.init();
     };
     navComponent.prototype = {
         constructor: navComponent,
