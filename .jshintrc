@@ -83,6 +83,7 @@
 
   // Custom Globals
   "globals"       : {
-    "App": true
+    "App": true,
+    "klass" : true
   }        // additional predefined global variables
 }

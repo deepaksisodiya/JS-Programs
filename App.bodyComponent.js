@@ -2,7 +2,7 @@
  * Created by Deepak Sisodiya on 04/12/14.
  */
 
-App.bodyComponent = klass({
+App.bodyComponent = BaseView.extend({
     templateId : "iframeTemplate",
     initialize : function($el) {
         this.$el = $el;
@@ -12,6 +12,6 @@ App.bodyComponent = klass({
         });
     },
     render: function(data) {
-        Util.loadTemplate(data, this.templateId, this.$el);
+        this.loadTemplate(data, this.templateId, this.$el);
     }
 });

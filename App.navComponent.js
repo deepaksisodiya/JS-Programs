@@ -2,7 +2,7 @@
  * Created by Deepak Sisodiya on 04/12/14.
  */
 
-App.navComponent = klass({
+App.navComponent = BaseView.extend({
     events: {
         "click .link": "onLinkClick"
     },
@@ -17,11 +17,11 @@ App.navComponent = klass({
     startModule : function (dataConfig) {
         this.dataConfig = dataConfig;
         this.render();
-        Util.addEvents(this);
-        this.$el.find(".link").eq(this.getIndexToLoad()).trigger("click");
+        this.addEvents();
+        this.$(".link").eq(this.getIndexToLoad()).trigger("click");
     },
     render: function () {
-        Util.loadTemplate(this.dataConfig, this.templateId, this.$el);
+        this.loadTemplate(this.dataConfig, this.templateId, this.$el);
     },
     onLinkClick: function (e, target, dataSet) {
         var index = dataSet.index;
