@@ -17,7 +17,7 @@ App.bodyComponent = (function () {
             });
         },
         render: function(data) {
-            App.loadTemplate(data, this.templateId, this.$el);
+            Util.loadTemplate(data, this.templateId, this.$el);
         }
     };
     return bodyComponent;

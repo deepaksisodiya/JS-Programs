@@ -4,7 +4,8 @@
 
 
 var App = {};
-App.getRequest = function (file, callback) {
+var Util = {};
+Util.getRequest = function (file, callback) {
     var oReq = new XMLHttpRequest();
     oReq.open("get", file, true);
     oReq.send();
@@ -12,11 +13,39 @@ App.getRequest = function (file, callback) {
         callback(JSON.parse(this.responseText));
     };
 };
-App.loadTemplate = function (dataObj, tempId, domNode) {
+Util.loadTemplate = function (dataObj, tempId, domNode) {
     var tempStr = $("#" + tempId).html();
     var compileTemp = _.template(tempStr);
     var tempHTML = compileTemp({
         obj:dataObj
     });
     domNode.html(tempHTML);
+};
+
+Util.addEvents = function (module){
+    //https://gist.github.com/nsisodiya/12b00d5280d0cf757bdc
+    if (module.events !== undefined) {
+        _.each(module.events, function(handler, key) {
+            var arr = key.split(" ");
+            var method = arr.shift();
+            var hash = arr.join(" ");
+            if (hash === "") {
+                module.$el.on(method, function(e) {
+                    try {
+                        module[handler].call(module, e, e.target, e.target.dataset);
+                    } catch (ex) {
+                        console.error(ex);
+                    }
+                });
+            } else {
+                module.$el.on(method, hash, function(e) {
+                    try {
+                        module[handler].call(module, e, e.target, e.target.dataset);
+                    } catch (ex) {
+                        console.error(ex);
+                    }
+                });
+            }
+        });
+    }
 };

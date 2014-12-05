@@ -18,7 +18,7 @@ App.MyApp = (function () {
             new App.bodyComponent(this.$el.find("#section1"));
         },
         render: function() {
-            App.loadTemplate({}, this.templateId, this.$el);
+            Util.loadTemplate({}, this.templateId, this.$el);
         }
     };
     return MyApp;

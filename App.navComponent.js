@@ -13,25 +13,25 @@ App.navComponent = (function () {
         templateId : "navBar",
         init : function () {
             var self = this;
-            App.getRequest("config.json", function (dataConfig) {
+            Util.getRequest("config.json", function (dataConfig) {
                self.startModule(dataConfig);
             });
         },
         startModule : function (dataConfig) {
             this.dataConfig = dataConfig;
             this.render();
-            this.addEvents();
+            Util.addEvents(this);
+            this.$el.find(".link").eq(this.getIndexToLoad()).trigger("click");
         },
         render: function () {
-            App.loadTemplate(this.dataConfig, this.templateId, this.$el);
+            Util.loadTemplate(this.dataConfig, this.templateId, this.$el);
         },
-        addEvents: function () {
-            var self = this;
-            this.$el.find(".link").on("click", function () {
-                var index = this.getAttribute("data-index");
-                $.publish("navClick", self.dataConfig[index]);
-            });
-            this.$el.find(".link").eq(this.getIndexToLoad()).trigger("click");
+        events: {
+            "click .link": "onLinkClick"
+        },
+        onLinkClick: function (e, target, dataSet) {
+            var index = dataSet.index;
+            $.publish("navClick", this.dataConfig[index]);
         },
         getIndexToLoad: function () {
             var location = window.location.hash;
@@ -46,6 +46,7 @@ App.navComponent = (function () {
                         return i;
                     }
                 }
+                return 0;
             }
         }
     };
