@@ -34,7 +34,19 @@ App.navComponent = (function () {
             this.$el.find(".link").eq(this.getIndexToLoad()).trigger("click");
         },
         getIndexToLoad: function () {
-            return 0;
+            var location = window.location.hash;
+            if(location === "") {
+                return 0;
+            }else {
+                var str = location.slice(1);
+                var dataConfig = this.dataConfig;
+                var dataConfigLength = dataConfig.length
+                for(var i=0; i < dataConfigLength; i=i+1) {
+                    if(dataConfig[i].jsFiddleUrl === str) {
+                        return i;
+                    }
+                }
+            }
         }
     };
     return navComponent;
