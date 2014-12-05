@@ -31,7 +31,10 @@ App.navComponent = (function () {
                 var index = this.getAttribute("data-index");
                 $.publish("navClick", self.dataConfig[index]);
             });
-            this.$el.find(".link:first").trigger("click");
+            this.$el.find(".link").eq(this.getIndexToLoad()).trigger("click");
+        },
+        getIndexToLoad: function () {
+            return 0;
         }
     };
     return navComponent;
